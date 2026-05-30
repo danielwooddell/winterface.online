@@ -8288,3 +8288,20 @@ body.winterface-offline .interface-section .interface-shell {
     width: 100%;
   }
 }
+
+/* =========================
+   WInterface v3.5 Operational Command Alignment Fix
+   Normalizes the Operational mode core panel so its command bar aligns with
+   Active Pathways and Showcase Bay in normal desktop view.
+   Fullscreen/maximized mode remains untouched.
+========================= */
+
+@media (min-width: 901px) {
+  .interface-section.interface-system-set-operations:not(.is-winterface-maximized) .interface-core {
+    justify-content: flex-start;
+  }
+
+  .interface-section.interface-system-set-operations:not(.is-winterface-maximized) .interface-response[data-interface-response] {
+    min-height: 21.1rem;
+  }
+}

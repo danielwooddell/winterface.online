@@ -8224,12 +8224,17 @@ body.winterface-offline .interface-section .interface-shell {
 }
 
 .contact-card-actions {
-  justify-content: flex-end;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(128px, 1fr));
+  justify-content: end;
   align-items: center;
+  justify-self: end;
+  width: min(100%, 430px);
   margin-top: 0;
 }
 
 .contact-card-actions .button {
+  width: 100%;
   min-width: 128px;
   min-height: 58px;
   padding-inline: 1.65rem;
@@ -8261,7 +8266,8 @@ body.winterface-offline .interface-section .interface-shell {
   }
 
   .contact-card-actions {
-    justify-content: flex-start;
+    justify-content: start;
+    justify-self: start;
   }
 }
 
@@ -8273,7 +8279,11 @@ body.winterface-offline .interface-section .interface-shell {
     padding: 2rem 1.25rem;
   }
 
-  .contact-card-actions,
+  .contact-card-actions {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
   .contact-card-actions .button {
     width: 100%;
   }

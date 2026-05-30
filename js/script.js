@@ -1045,7 +1045,7 @@
         command: 'activate_edtech_assistant',
         aliases: ['eta', 'edtech assistant', 'custom gpt', 'assistant', 'ai assistant', 'support bot'],
         kicker: 'AI Support Assistant',
-        title: '24/7 Support Assistant Model',
+        title: '24/7 Support Assistant',
         copy: 'ETA extends the support ecosystem through conversational guidance for the Canvas LMS, educational technology tools, accessibility workflows, and Teaching with Tech resources.',
         systems: ['Custom GPT support', '24/7 guidance layer', 'Ed-tech workflow routing'],
         primary: 'AI assistants are strongest when they sit inside a real support architecture.',

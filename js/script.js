@@ -1177,7 +1177,7 @@
         image: 'assets/showcase/Woodrow.png',
         imageAlt: 'Creator system visual asset',
         mediaKicker: 'WInterface™',
-        mediaTitle: 'Creator System Asset',
+        mediaTitle: 'WInterface™ = (Daniel)Wooddell’s + Interface',
         mediaCopy: 'A visual identity asset used to reinforce the atmosphere, personality, and interface language of WInterface.'
       },
       caseStudyPlayer: {

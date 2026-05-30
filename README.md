@@ -1,2 +1,2 @@
 # winterface.online
-Official WInterface standalone project and website
+Official WInterface™ standalone project and website

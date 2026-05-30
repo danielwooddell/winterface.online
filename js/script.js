@@ -1163,7 +1163,7 @@
       workflowReplay: {
         set: 'media',
         number: '05',
-        nav: 'Meet the Developer',
+        nav: 'Meet the Dev',
         command: 'open_creator_preview',
         aliases: ['workflow replay', 'replay', 'creator','process video', 'workflow video', 'walkthrough replay', 'woodrow', 'woodrow wilson'],
         kicker: 'Showcase Bay',

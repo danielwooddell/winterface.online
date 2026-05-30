@@ -934,7 +934,7 @@
         aliases: ['learning', 'design', 'course', 'instructional design', 'learning design', 'faculty development', 'teaching'],
         kicker: 'Digital Experience Design',
         title: 'Learning Design With Structure and Purpose',
-        copy: 'This pathway connects objectives, instructional pathways, digital materials, and support resources so technology serves the learning or communication experience instead of distracting from it.',
+        copy: 'This pathway connects objectives, instructional pathways, digital materials & support resources so technology serves the learning or communication experience instead of distracting from it.',
         systems: ['Course design strategy', 'Instructional pathways', 'Reusable educator resources'],
         primary: 'Strong learning systems make the next action clear.',
         linkText: 'Launch Design Site',
@@ -943,7 +943,7 @@
       accessibility: {
         set: 'primary',
         number: '03',
-        nav: 'Accessibility',
+        nav: 'Open Interface',
         command: 'sync_accessibility_layer',
         aliases: ['accessibility', 'accessible', 'ada', 'ally', 'inclusive', 'wcag', 'readability', 'universal design', 'udl'],
         kicker: 'Inclusive Digital Systems',

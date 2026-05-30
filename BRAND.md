@@ -1,14 +1,14 @@
-# WInterface Brand Guide
+# WInterface™ Brand Guide
 
 ## Brand Name
 
-**WInterface**
+**WInterface™**
 
-Use the capital **W** and capital **I** consistently. The name combines a distinctive product identity with the interface concept at the center of the experience.
+Use the capital **W** and capital **I** consistently. The name combines a distinctive product identity with the interface concept at the center of the experience. 
 
 ## Core Description
 
-WInterface is a cinematic AI command-interface experience for exploring learning design, accessibility, support ecosystems, workflow intelligence, and human-centered technology.
+WInterface™ is a cinematic AI command-interface experience for exploring learning design, accessibility, support ecosystems, workflow intelligence, and human-centered technology.
 
 ## Tagline Options
 
@@ -59,7 +59,7 @@ Display/accent font:
 
 ## Logo and Identity Usage
 
-The WInterface mark should be used as a compact system identity mark. It should appear on dark backgrounds and retain the cyan, violet, and pink energy of the interface.
+The WInterface™ mark should be used as a compact system identity mark. It should appear on dark backgrounds and retain the cyan, violet, and pink energy of the interface.
 
 Use the mark for:
 
@@ -73,7 +73,7 @@ Use the mark for:
 
 Recommended GitHub repository description:
 
-> WInterface is a cinematic AI command-interface experience for learning design, accessibility, support ecosystems, and human-centered technology workflows.
+> WInterface™ is a cinematic AI command-interface experience for learning design, accessibility, support ecosystems, and human-centered technology workflows.
 
 ## Recommended GitHub Topics
 

@@ -878,7 +878,7 @@
       }
 
       if (interfaceSystemStatusText) {
-        interfaceSystemStatusText.textContent = winterfaceOnline ? 'WInterface™ v3.5 Online' : 'WInterface™ v3.5 Paused';
+        interfaceSystemStatusText.textContent = winterfaceOnline ? 'WInterface™ v3.5 Online' : 'WInterface™ v3.5 Muted';
       }
 
       if (!winterfaceOnline) {
@@ -947,7 +947,7 @@
         aliases: ['ai', 'artificial intelligence', 'genai', 'generative ai', 'prompt', 'prompting', 'gpt', 'chatgpt', 'copilot', 'automation'],
         kicker: 'Generative AI Strategy',
         title: 'AI Systems That Support Real Work',
-        copy: 'This pathway models AI guidance around practical use, course or content design, prompting, productivity, and responsible adoption rather than treating AI as only a policy conversation.',
+        copy: 'This pathway models AI guidance around practical use, course or content design, prompting, productivity, and responsible adoption.',
         systems: ['Prompting guidance', 'Educator workflows', 'Custom GPT support'],
         primary: 'AI adoption becomes useful when it is tied to actual work.',
         linkText: 'Launch GenAI Hub',
@@ -961,7 +961,7 @@
         aliases: ['learning', 'design', 'course', 'instructional design', 'learning design', 'faculty development', 'teaching'],
         kicker: 'Digital Experience Design',
         title: 'Learning Design With Structure and Purpose',
-        copy: 'This pathway connects objectives, instructional pathways, digital materials & support resources so technology serves the learning or communication experience instead of distracting from it.',
+        copy: 'This pathway connects objectives, instructional goals, & digital resources so technology serves the learning or communication experience instead of distracting from it.',
         systems: ['Course design strategy', 'Instructional pathways', 'Reusable educator resources'],
         primary: 'Strong learning systems make the next action clear.',
         linkText: 'Launch Design Site',
@@ -1026,11 +1026,11 @@
       canvasBasics: {
         set: 'operations',
         number: '01',
-        nav: 'Canvas LMS Basics',
+        nav: 'Faculty LMS Basics',
         command: 'launch_canvas_basics',
         aliases: ['canvas', 'canvas basics', 'lms basics', 'faculty canvas', 'canvas course', 'training course'],
         kicker: 'Faculty Training System',
-        title: 'Canvas Basics for Faculty',
+        title: 'Basics for Faculty',
         copy: 'A structured faculty training course that supports practical Canvas use, common teaching workflows, and scalable LMS guidance for instructors who need clear next steps.',
         systems: ['Faculty LMS training', 'Canvas workflow support', 'Reusable course guidance'],
         primary: 'Effective LMS support gives faculty confidence before complexity appears.',
@@ -1040,12 +1040,12 @@
       allyAccess: {
         set: 'operations',
         number: '02',
-        nav: 'Ally Accessibility',
+        nav: 'Course Accessibility',
         command: 'open_ally_accessibility_systems',
         aliases: ['ally', 'anthology ally', 'accessibility strategies', 'canvas accessibility', 'accessible canvas', 'accessible content'],
         kicker: 'Accessibility Support Layer',
-        title: 'Ally Accessibility',
-        copy: 'Accessibility support becomes stronger when it is connected to LMS workflows, document improvement, readable design, captions, alternative text, and human guidance.',
+        title: 'Accessibility Built-in',
+        copy: 'Accessibility support becomes stronger when it is connected to LMS workflows, document improvement, readable design, captions, alternative text, & guidance.',
         systems: ['Ally-informed workflows', 'Accessible Canvas practices', 'Improvement pathways'],
         primary: 'Accessibility works best as a visible workflow, not a hidden compliance task. Systems go.',
         linkText: 'Launch Ally Intel',
@@ -1058,8 +1058,8 @@
         command: 'open_technology_hub',
         aliases: ['teaching with technology', 'technology hub', 'edtech hub', 'tool hub', 'teaching tools'],
         kicker: 'Digital Resource Ecosystem',
-        title: 'Teaching with Technology',
-        copy: 'A public-facing ecosystem for helping educators discover educational technology, generative AI guidance, accessibility support, and practical digital teaching resources.',
+        title: 'Teaching with Tech',
+        copy: 'A public-facing ecosystem for helping educators discover EdTech, generative AI guidance, accessibility support, and practical digital teaching resources.',
         systems: ['Tool discovery', 'Educator resource pathways', 'Public-facing support UX'],
         primary: 'A strong resource hub reduces support friction before questions become tickets.',
         linkText: 'Launch Tech Hub',
@@ -1072,8 +1072,8 @@
         command: 'activate_edtech_assistant',
         aliases: ['eta', 'edtech assistant', 'custom gpt', 'assistant', 'ai assistant', 'support bot'],
         kicker: 'AI Support Assistant',
-        title: '24/7 Support Assistant',
-        copy: 'ETA extends the support ecosystem through conversational guidance for the Canvas LMS, educational technology tools, accessibility workflows, and Teaching with Tech resources.',
+        title: '24/7 EdTech Assistant',
+        copy: 'ETA extends the support ecosystem through conversational guidance for the LMS, educational technology tools, accessibility workflows, and Teaching with Tech resources.',
         systems: ['Custom GPT support', '24/7 guidance layer', 'Ed-tech workflow routing'],
         primary: 'AI assistants are strongest when they sit inside a real support architecture.',
         linkText: 'Launch ETA',
@@ -1086,7 +1086,7 @@
         command: 'route_prompting_systems',
         aliases: ['prompting', 'prompts', 'prompt', 'prompt design', 'ai prompts', 'genai prompts'],
         kicker: 'Prompting Architecture',
-        title: 'Prompting as a Workflow',
+        title: 'Prompting Workflow',
         copy: 'Prompting works best when users understand context, role, output format, constraints, examples, and review habits rather than relying on one-off prompt tricks.',
         systems: ['Prompt structure', 'Educator productivity', 'AI output review'],
         primary: 'Good prompting is structured thinking made visible. An iterative process for my CPU.',

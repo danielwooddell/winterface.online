@@ -539,6 +539,8 @@
   const interfaceMenuSound = document.querySelector('#interface-menu-sound');
   const interfaceSubmitSound = document.querySelector('#interface-submit-sound');
   const interfaceLaunchSound = document.querySelector('#interface-launch-sound');
+  const jarvisEasterEggSound = typeof Audio === 'function' ? new Audio('/audio/ijarvis.mp3') : null;
+  const glitchEasterEggSound = typeof Audio === 'function' ? new Audio('/audio/iglitch.mp3') : null;
   const signalPulseLeftSound = typeof Audio === 'function' ? new Audio('/audio/ileft.mp3') : null;
   const signalPulseTopSound = typeof Audio === 'function' ? new Audio('/audio/itop.mp3') : null;
   const signalPulseRightSound = typeof Audio === 'function' ? new Audio('/audio/iright.mp3') : null;
@@ -556,6 +558,7 @@
   const interfaceMenuVolume = 0.20;
   const interfaceSubmitVolume = 0.18;
   const interfaceLaunchVolume = 0.18;
+  const easterEggVolume = 0.18;
   const signalPulseVolume = 0.15;
 
   function getStoredSoundPreference() {
@@ -654,6 +657,24 @@
     playAudio(interfaceLaunchSound, { volume: interfaceLaunchVolume });
   }
 
+  function playInterfaceMediaSoundCue(wasMuted, isMutedNow, currentInterfaceKey) {
+    const mediaSoundWasTurnedOn = Boolean(wasMuted) && !isMutedNow;
+
+    if (mediaSoundWasTurnedOn && currentInterfaceKey === 'workflowReplay') {
+      playAudio(jarvisEasterEggSound, { volume: easterEggVolume });
+      return;
+    }
+
+    if (mediaSoundWasTurnedOn && currentInterfaceKey === 'caseStudyPlayer') {
+      playAudio(glitchEasterEggSound, { volume: easterEggVolume });
+      return;
+    }
+
+    if (typeof playInterfaceOrbSound === 'function') {
+      playInterfaceOrbSound();
+    }
+  }
+
   function playSignalPulseSound(index) {
     if (!soundEnabled || !startupPlayed) return;
 
@@ -688,13 +709,15 @@
     });
   }
 
-  if (startupSound || interactionSound || interfaceOrbSound || interfaceMenuSound || interfaceSubmitSound || interfaceLaunchSound || signalPulseLeftSound || signalPulseTopSound || signalPulseRightSound) {
+  if (startupSound || interactionSound || interfaceOrbSound || interfaceMenuSound || interfaceSubmitSound || interfaceLaunchSound || jarvisEasterEggSound || glitchEasterEggSound || signalPulseLeftSound || signalPulseTopSound || signalPulseRightSound) {
     prepareAudioElement(startupSound, startupVolume);
     prepareAudioElement(interactionSound, interactionVolume);
     prepareAudioElement(interfaceOrbSound, interfaceOrbVolume);
     prepareAudioElement(interfaceMenuSound, interfaceMenuVolume);
     prepareAudioElement(interfaceSubmitSound, interfaceSubmitVolume);
     prepareAudioElement(interfaceLaunchSound, interfaceLaunchVolume);
+    prepareAudioElement(jarvisEasterEggSound, easterEggVolume);
+    prepareAudioElement(glitchEasterEggSound, easterEggVolume);
     prepareAudioElement(signalPulseLeftSound, signalPulseVolume);
     prepareAudioElement(signalPulseTopSound, signalPulseVolume);
     prepareAudioElement(signalPulseRightSound, signalPulseVolume);
@@ -721,6 +744,8 @@
         stopAudio(interfaceMenuSound);
         stopAudio(interfaceSubmitSound);
         stopAudio(interfaceLaunchSound);
+        stopAudio(jarvisEasterEggSound);
+        stopAudio(glitchEasterEggSound);
         stopAudio(signalPulseLeftSound);
         stopAudio(signalPulseTopSound);
         stopAudio(signalPulseRightSound);
@@ -863,6 +888,8 @@
         stopAudio(interfaceMenuSound);
         stopAudio(interfaceSubmitSound);
         stopAudio(interfaceLaunchSound);
+        stopAudio(jarvisEasterEggSound);
+        stopAudio(glitchEasterEggSound);
         stopAudio(signalPulseLeftSound);
         stopAudio(signalPulseTopSound);
         stopAudio(signalPulseRightSound);
@@ -1886,10 +1913,9 @@
     if (mediaMute) {
       updateInterfaceMuteControl();
       mediaMute.addEventListener('click', () => {
+        const wasMuted = interfaceMediaMuted;
         toggleInterfaceMediaMute();
-        if (typeof playInterfaceOrbSound === 'function') {
-          playInterfaceOrbSound();
-        }
+        playInterfaceMediaSoundCue(wasMuted, interfaceMediaMuted, activeInterfaceKey);
       });
     }
 

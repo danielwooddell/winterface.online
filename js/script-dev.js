@@ -905,7 +905,7 @@
         label: 'Showcase Bay',
         subtitle: 'Media Modules',
         modeLabel: 'Showcase bay active',
-        countLabel: '🔴 6 media modules connected',
+        countLabel: '🩷 6 media modules connected',
         autoplay: false,
         keys: ['mediaPreview', 'videoWalkthroughs', 'imageSystems', 'demoConsole', 'workflowReplay', 'caseStudyPlayer']
       }

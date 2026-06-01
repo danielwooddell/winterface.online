@@ -947,9 +947,9 @@
         aliases: ['ai', 'artificial intelligence', 'genai', 'generative ai', 'prompt', 'prompting', 'gpt', 'chatgpt', 'copilot', 'automation'],
         kicker: 'Generative AI Strategy',
         title: 'AI Systems That Support Real Work',
-        copy: 'This pathway models AI guidance around practical use, course or content design, prompting, productivity, responsible adoption, and informed decision-making.',
+        copy: 'This pathway models AI guidance around practical use, course or content design, prompting, productivity, and responsible adoption.',
         systems: ['Prompting guidance', 'Educator workflows', 'Custom GPT support'],
-        primary: 'AI adoption becomes useful when it is tied to actual work💻',
+        primary: 'AI adoption becomes useful when it is tied to actual work. 💻',
         linkText: 'Launch GenAI Hub',
         linkUrl: 'https://www.xavier.edu/teachingwithtech/genai'
       },
@@ -1047,7 +1047,7 @@
         title: 'Accessibility Built-in',
         copy: 'Accessibility support becomes stronger when it is connected to LMS workflows, document improvement, readable design, captions, alternative text, & guidance.',
         systems: ['Ally-informed workflows', 'Accessible LMS practices', 'Improvement pathways'],
-        primary: 'Accessibility works best as a visible workflow, not a hidden compliance task. Systems go.',
+        primary: 'Accessibility works best as a visible workflow, not a hidden compliance task. All systems go.',
         linkText: 'Launch Ally Intel',
         linkUrl: 'https://www.xavier.edu/teachingwithtech/a-z/tools/ally'
       },
@@ -1696,7 +1696,7 @@
     function updateInterfaceMuteControl() {
       if (!mediaMute) return;
 
-      const labelText = interfaceMediaMuted ? 'Unmute Showcase Bay audio' : 'Mute Showcase Bay audio';
+      const labelText = interfaceMediaMuted ? 'Unmute Showcase Bay Audio' : 'Mute Showcase Bay Audio';
       mediaMute.classList.toggle('is-muted', interfaceMediaMuted);
       mediaMute.setAttribute('aria-pressed', String(interfaceMediaMuted));
       mediaMute.setAttribute('aria-label', labelText);

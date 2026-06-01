@@ -961,7 +961,7 @@
         aliases: ['learning', 'design', 'course', 'instructional design', 'learning design', 'faculty development', 'teaching'],
         kicker: 'Digital Experience Design',
         title: 'Learning Design With Structure and Purpose',
-        copy: 'This pathway connects objectives, instructional goals, & digital resources so technology serves the learning or communication experience instead of distracting from it.',
+        copy: 'This pathway connects objectives, goals, & digital resources so technology serves the learning or communication experience instead of distracting from it.',
         systems: ['Course design strategy', 'Instructional pathways', 'Reusable educator resources'],
         primary: 'Strong learning systems make the next action clear. 💎',
         linkText: 'Launch Design Site',
@@ -1031,7 +1031,7 @@
         aliases: ['canvas', 'canvas basics', 'lms basics', 'faculty canvas', 'canvas course', 'training course'],
         kicker: 'Faculty Training System',
         title: 'Basics for Faculty',
-        copy: 'A structured faculty training course that supports practical LMS use, common teaching workflows, and scalable LMS guidance for instructors who need clear next steps.',
+        copy: 'A structured faculty training course that supports practical LMS use, common workflows, and scalable LMS guidance for instructors who need clear next steps.',
         systems: ['Faculty LMS training', 'LMS workflow support', 'Reusable course guidance'],
         primary: 'Effective LMS support gives educators confidence before complexity appears.',
         linkText: 'Launch Canvas Basics',
@@ -1046,7 +1046,7 @@
         kicker: 'Accessibility Support Layer',
         title: 'Accessibility Built-in',
         copy: 'Accessibility support becomes stronger when it is connected to LMS workflows, document improvement, readable design, captions, alternative text, & guidance.',
-        systems: ['Ally-informed workflows', 'Accessible Canvas practices', 'Improvement pathways'],
+        systems: ['Ally-informed workflows', 'Accessible LMS practices', 'Improvement pathways'],
         primary: 'Accessibility works best as a visible workflow, not a hidden compliance task. All systems go.',
         linkText: 'Launch Ally Intel',
         linkUrl: 'https://www.xavier.edu/teachingwithtech/a-z/tools/ally'
@@ -1073,9 +1073,9 @@
         aliases: ['eta', 'edtech assistant', 'custom gpt', 'assistant', 'ai assistant', 'support bot'],
         kicker: 'AI Support Assistant',
         title: '24/7 EdTech Assistant',
-        copy: 'ETA extends the support ecosystem through conversational guidance for the LMS, educational technology tools, accessibility workflows, and Teaching with Tech resources.',
+        copy: 'ETA extends the support ecosystem through conversational guidance for the LMS, EdTech tools, accessibility workflows, and Teaching with Tech resources.',
         systems: ['Custom GPT support', '24/7 guidance layer', 'Ed-tech workflow routing'],
-        primary: 'AI assistants are strongest when they sit inside a real support architecture.',
+        primary: 'Artifical assistants are strongest when they sit inside a real support architecture.',
         linkText: 'Launch ETA',
         linkUrl: 'https://chatgpt.com/g/g-69ffe6dfccf48191b6afb459d0c78cce-edtech-assistant-eta'
       },
@@ -1328,7 +1328,7 @@
       ],
       allyAccess: [
         { label: 'ALLY', readout: 'ALLY REVIEW: ACTIVE.' },
-        { label: 'CANVAS', readout: 'CANVAS ACCESS ROUTE: CONNECTED.' },
+        { label: 'LMS', readout: 'LMS ACCESS ROUTE: CONNECTED.' },
         { label: 'FIX', readout: 'ACCESS FIX PATH: AVAILABLE.' }
       ],
       teachingTech: [

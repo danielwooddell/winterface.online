@@ -4,7 +4,8 @@
 
 **WInterface™**
 
-Use the capital **W** and capital **I** consistently. The name combines a distinctive product identity with the interface concept at the center of the experience. 
+WInterface™ = (Daniel)Wooddell’s + Interface 
+The name combines a distinctive product identity with the interface concept at the center of the experience. 
 
 ## Core Description
 
@@ -82,9 +83,9 @@ winterface
 ai
 interface
 human-centered-design
-learning-design
+digital-design
 accessibility
-instructional-technology
+educational-technology
 portfolio
 web-design
 javascript

@@ -10,7 +10,7 @@ WInterface™ is designed as a standalone interactive web experience. It combine
 
 ## Current Build
 
-**Version:** 3.5  
+**Version:** 3.5 Final
 **Launch domain:** `winterface.online`  
 **Primary entry point:** `index.html`  
 **Hosting target:** GitHub Pages

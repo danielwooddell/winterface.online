@@ -4,8 +4,9 @@
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 3.5.x DEV | :white_check_mark: |
+| 3.5 FINAL | :white_check_mark: |
+| 3.5 DEV | :white_check_mark: |
 
 ## Reporting a Vulnerability
 
-To report a vulnerability, please email daniel.wooddell@gmail.com with as many details as you can provide. Thank you.
+To report a vulnerability, please email daniel.wooddell@gmail.com with as many details as you can provide. Thank you, Daniel Wooddell.

@@ -5,6 +5,7 @@
 **WInterface™**
 
 WInterface™ = (Daniel)Wooddell’s + Interface 
+
 The name combines a distinctive product identity with the interface concept at the center of the experience. 
 
 ## Core Description

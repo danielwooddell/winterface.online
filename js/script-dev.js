@@ -1403,7 +1403,7 @@
     const link = interfaceSystem.querySelector('[data-interface-link]');
     const mediaPanel = interfaceSystem.querySelector('[data-interface-media-panel]');
     const mediaToggle = interfaceSystem.querySelector('[data-interface-media-toggle]');
-    const mediaFrame = interfaceSystem.querySelector('[data-interface-media-frame]');
+    let mediaFrame = interfaceSystem.querySelector('[data-interface-media-frame]');
     const videoFrameWrap = interfaceSystem.querySelector('[data-interface-video-frame-wrap]');
     const showcaseFrame = interfaceSystem.querySelector('[data-interface-showcase-frame]');
     const showcaseImage = interfaceSystem.querySelector('[data-interface-showcase-image]');
@@ -1459,8 +1459,7 @@
       const nextSource = decodeRouteTarget(route.target);
       if (!nextSource) return false;
 
-      mediaFrame.src = nextSource;
-      setInterfacePlaybackState(false);
+      rebuildInterfaceMediaRoute(nextSource);
 
       if (commandInput) {
         commandInput.value = interfaceData.caseStudyPlayer.command;
@@ -1776,19 +1775,76 @@
       return youtubeIframeApiPromise;
     }
 
+    let mediaFrameObserver = null;
+
     function clearInterfaceMediaController() {
       interfaceMediaControllerToken += 1;
 
-      if (interfaceMediaController && typeof interfaceMediaController.destroy === 'function') {
+      const currentController = interfaceMediaController;
+      interfaceMediaController = null;
+      interfaceMediaControllerSource = '';
+
+      if (currentController && typeof currentController.destroy === 'function') {
         try {
-          interfaceMediaController.destroy();
+          currentController.destroy();
         } catch (error) {
           // Some providers reject teardown after iframe route changes.
         }
       }
+    }
 
-      interfaceMediaController = null;
-      interfaceMediaControllerSource = '';
+    function observeInterfaceMediaFrame() {
+      if (mediaFrameObserver) {
+        mediaFrameObserver.disconnect();
+        mediaFrameObserver = null;
+      }
+
+      if (!mediaFrame) return;
+
+      mediaFrameObserver = new MutationObserver(mutations => {
+        if (mutations.some(mutation => mutation.attributeName === 'src')) {
+          setInterfacePlaybackState(false);
+          initializeInterfaceMediaController();
+        }
+      });
+
+      mediaFrameObserver.observe(mediaFrame, { attributes: true, attributeFilter: ['src'] });
+    }
+
+    function rebuildInterfaceMediaFrame(nextSource) {
+      if (!mediaFrame || !mediaFrame.parentNode) return '';
+
+      const normalizedSource = normalizeInterfaceMediaSource(nextSource || getInterfaceMediaSource());
+      const replacementFrame = mediaFrame.cloneNode(false);
+
+      if (normalizedSource) {
+        replacementFrame.setAttribute('src', normalizedSource);
+      }
+
+      if (mediaFrameObserver) {
+        mediaFrameObserver.disconnect();
+        mediaFrameObserver = null;
+      }
+
+      const previousFrame = mediaFrame;
+      previousFrame.parentNode.replaceChild(replacementFrame, previousFrame);
+      mediaFrame = replacementFrame;
+      observeInterfaceMediaFrame();
+
+      return normalizedSource;
+    }
+
+    function rebuildInterfaceMediaRoute(nextSource) {
+      const normalizedSource = rebuildInterfaceMediaFrame(nextSource);
+
+      clearInterfaceMediaController();
+      setInterfacePlaybackState(false);
+
+      if (normalizedSource) {
+        initializeInterfaceMediaController();
+      }
+
+      return Boolean(normalizedSource);
     }
 
     function initializeVimeoMediaController(source, token) {
@@ -1985,16 +2041,7 @@
 
     initializeInterfaceMediaController();
 
-    if (mediaFrame) {
-      const mediaFrameObserver = new MutationObserver(mutations => {
-        if (mutations.some(mutation => mutation.attributeName === 'src')) {
-          setInterfacePlaybackState(false);
-          initializeInterfaceMediaController();
-        }
-      });
-
-      mediaFrameObserver.observe(mediaFrame, { attributes: true, attributeFilter: ['src'] });
-    }
+    observeInterfaceMediaFrame();
 
     document.addEventListener('visibilitychange', () => {
       if (document.hidden) {

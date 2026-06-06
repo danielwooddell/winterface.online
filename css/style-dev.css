@@ -8309,23 +8309,25 @@ body.winterface-offline .interface-section .interface-shell {
 
 /* =========================
    WINTERFACE PRIMARY RAIL STABILITY PATCH
-   Stabilizes the normal desktop Active Pathways console height so the left
-   navigation buttons keep a consistent, fuller shape when switching cards.
+   Keeps Active Pathways rail cards readable in normal desktop view without
+   inflating the full three-column WInterface grid. This prevents the right
+   Primary Signal / Live Systems stack and center player area from stretching
+   taller than Operational and Showcase modes.
    Scope: normal embedded desktop view only. Fullscreen, mobile, operational,
    and showcase modes are intentionally untouched.
 ========================= */
 
 @media (min-width: 1101px) {
   .interface-section.interface-system-set-primary:not(.is-winterface-maximized) .interface-grid {
-    min-height: 38.75rem;
+    min-height: 31rem;
   }
 
   .interface-section.interface-system-set-primary:not(.is-winterface-maximized) .interface-path-list {
-    grid-template-rows: repeat(6, minmax(4.65rem, 1fr));
+    grid-template-rows: repeat(6, minmax(4.2rem, auto));
   }
 
   .interface-section.interface-system-set-primary:not(.is-winterface-maximized) .interface-path {
-    min-height: 4.65rem;
+    min-height: 4.2rem;
   }
 }
 

@@ -29,7 +29,7 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet"/>
-<link href="../css/style-dev.css" rel="stylesheet"/>
+<link href="../css/style-dev.css" id="winterface-theme-stylesheet" rel="stylesheet"/>
 
 <style>
   .dev-environment-banner {
@@ -146,6 +146,15 @@
 <span data-interface-mode-label="">Primary pathways active</span>
 <i aria-hidden="true" class="interface-status-orb interface-status-orb-mirror"></i>
 </span>
+<div class="interface-theme-selector" data-interface-theme-selector="">
+<button aria-controls="interface-theme-menu" aria-expanded="false" class="interface-theme-toggle" data-interface-theme-toggle="" type="button">Style Matrix</button>
+<div aria-label="WInterface visual systems" class="interface-theme-menu" data-interface-theme-menu="" hidden="" id="interface-theme-menu" role="menu">
+<button class="interface-theme-option is-active" data-interface-theme-index="01" data-interface-theme-option="default" role="menuitemradio" aria-checked="true" type="button">Default</button>
+<button class="interface-theme-option" data-interface-theme-index="02" data-interface-theme-option="navy-sky-grey" role="menuitemradio" aria-checked="false" type="button">Navy Sky Grey</button>
+<button class="interface-theme-option" data-interface-theme-index="03" data-interface-theme-option="green-gold" role="menuitemradio" aria-checked="false" type="button">Green Gold</button>
+<button class="interface-theme-option" data-interface-theme-index="04" data-interface-theme-option="dark-purple" role="menuitemradio" aria-checked="false" type="button">Dark Purple</button>
+</div>
+</div>
 <span class="interface-status-item interface-status-count">
 <span data-interface-count-label="">6 pathways connected</span>
 <button aria-label="Maximize WInterface console" aria-pressed="false" class="interface-maximize-button" data-interface-maximize-toggle="" title="Maximize WInterface console" type="button">

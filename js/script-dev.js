@@ -916,7 +916,7 @@
         label: 'Active Pathways',
         subtitle: 'Primary Systems',
         modeLabel: 'Primary systems active',
-        countLabel: '🔵 6 pathways connected',
+        countLabel: '🔋 6 pathways connected',
         autoplay: true,
         keys: ['ai', 'learning', 'accessibility', 'support', 'workflow', 'human']
       },
@@ -924,7 +924,7 @@
         label: 'Operational',
         subtitle: 'Support Nodes',
         modeLabel: 'Manual exploration mode',
-        countLabel: '🟣 6 support nodes connected',
+        countLabel: '🍇 6 support nodes connected',
         autoplay: false,
         keys: ['canvasBasics', 'allyAccess', 'teachingTech', 'etaAssistant', 'genaiPrompting', 'courseSystems']
       },
@@ -2055,7 +2055,7 @@
 
     if (mediaToggle) {
         mediaToggle.setAttribute('aria-pressed', String(Boolean(expanded)));
-        mediaToggle.textContent = expanded ? 'Collapse WInterface☠️' : 'Expand WInterface🦇';
+        mediaToggle.textContent = expanded ? 'Collapse WInterface ☠️' : 'Expand WInterface 🦇';
       }
     }
 

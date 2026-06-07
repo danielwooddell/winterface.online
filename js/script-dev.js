@@ -878,7 +878,7 @@
       }
 
       if (interfaceSystemStatusText) {
-        interfaceSystemStatusText.textContent = winterfaceOnline ? 'WInterface™ v3.5 DEV ✅' : 'WInterface™ v3.5  DEV ❌';
+        interfaceSystemStatusText.textContent = winterfaceOnline ? 'WInterface™ v3.7 DEV ✅' : 'WInterface™ v3.7  DEV ❌';
       }
 
       if (!winterfaceOnline) {

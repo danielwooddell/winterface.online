@@ -8767,230 +8767,700 @@ html[data-winterface-theme="dark-purple"] {
 }
 
 
+
 /* =========================
-   WFO v3.7 SALES HOMEPAGE
+   WFO v3.7 MARKETING HOMEPAGE
 ========================= */
 
-.sales-hero .hero-content {
-  min-height: min(860px, calc(100vh - 2rem));
-}
-
-.sales-hero-content {
-  grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
-}
-
-.sales-hero .hero-text {
-  max-width: 760px;
-}
-
-.sales-hero-right {
-  align-content: center;
-}
-
-.sales-screen-card {
-  grid-column: 1 / -1;
-  min-height: 230px;
-  padding: 1.45rem;
-  border: 1px solid rgba(56, 189, 248, 0.3);
-  border-radius: 28px;
-  background:
-    radial-gradient(circle at 12% 18%, rgba(56, 189, 248, 0.18), transparent 34%),
-    radial-gradient(circle at 88% 82%, rgba(139, 92, 246, 0.18), transparent 36%),
-    linear-gradient(135deg, rgba(255,255,255,0.10), rgba(255,255,255,0.045));
-  box-shadow: var(--shadow), 0 0 44px rgba(56, 189, 248, 0.10);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
-.sales-screen-card h3 {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(1.8rem, 3vw, 3rem);
-  letter-spacing: -0.055em;
-  color: var(--text);
-  margin: 0 0 0.65rem;
-}
-
-.sales-screen-card p:last-child {
-  color: var(--muted-strong);
-  max-width: 560px;
-}
-
-.sales-proof-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.7rem;
-  margin-top: 1.35rem;
-}
-
-.sales-proof-row span {
-  display: inline-flex;
-  align-items: center;
-  min-height: 2.25rem;
-  padding: 0.48rem 0.82rem;
-  border: 1px solid rgba(56, 189, 248, 0.28);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.065);
-  color: var(--muted-strong);
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  box-shadow: inset 0 0 18px rgba(56, 189, 248, 0.035);
-}
-
-.sales-section {
+.wm-hero {
   position: relative;
-  z-index: 2;
+  min-height: 100vh;
+  padding: 9.8rem 1.5rem 6.4rem;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  isolation: isolate;
 }
 
-.sales-section::before {
+.wm-hero::before {
+  content: "";
+  position: absolute;
+  inset: 5rem auto auto 50%;
+  width: min(46rem, 72vw);
+  height: min(46rem, 72vw);
+  border-radius: 999px;
+  transform: translateX(-3%);
+  background:
+    radial-gradient(circle at 45% 38%, rgba(56,189,248,0.24), transparent 42%),
+    radial-gradient(circle at 62% 62%, rgba(139,92,246,0.24), transparent 46%),
+    radial-gradient(circle at 50% 50%, rgba(236,72,153,0.12), transparent 58%);
+  filter: blur(3px);
+  opacity: 0.95;
+  z-index: -1;
+}
+
+.wm-hero::after {
   content: "";
   position: absolute;
   left: 50%;
-  top: 0;
+  bottom: 0;
   width: min(var(--max-width), calc(100% - 3rem));
   height: 1px;
   transform: translateX(-50%);
-  background: linear-gradient(90deg, transparent, rgba(56,189,248,0.36), rgba(139,92,246,0.28), transparent);
-  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(56,189,248,0.48), rgba(139,92,246,0.36), transparent);
 }
 
-.sales-card-grid {
+.wm-hero-grid {
+  width: min(var(--max-width), 100%);
+  margin: 0 auto;
   display: grid;
-  gap: 1.25rem;
-  margin-top: 2rem;
-}
-
-.sales-card-grid.three-up {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.sales-card-grid.four-up {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.sales-split {
-  display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(340px, 1.05fr);
-  gap: 2rem;
+  grid-template-columns: minmax(0, 1.04fr) minmax(340px, 0.72fr);
+  gap: clamp(2rem, 5vw, 5rem);
   align-items: center;
 }
 
-.sales-panel {
-  position: relative;
-  overflow: hidden;
-  padding: 1.6rem;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 32px;
-  background:
-    radial-gradient(circle at 8% 12%, rgba(56, 189, 248, 0.17), transparent 34%),
-    radial-gradient(circle at 90% 90%, rgba(236, 72, 153, 0.11), transparent 36%),
-    rgba(255, 255, 255, 0.075);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(20px);
+.wm-eyebrow-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.3rem;
 }
 
-.sales-feature-list {
-  display: grid;
-  gap: 0.85rem;
-  margin: 1.1rem 0 0;
-  padding: 0;
-  list-style: none;
+.wm-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid rgba(125,211,252,0.26);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.055);
+  color: var(--muted-strong);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  box-shadow: 0 0 22px rgba(56,189,248,0.08);
 }
 
-.sales-feature-list li {
-  padding: 0.95rem 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.11);
-  border-radius: 20px;
-  background: rgba(5, 8, 22, 0.26);
-  color: var(--muted);
-  line-height: 1.55;
-}
-
-.sales-feature-list strong {
+.wm-hero h1 {
+  max-width: 920px;
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(3.05rem, 7.2vw, 7.5rem);
+  line-height: 0.89;
+  letter-spacing: -0.075em;
   color: var(--text);
 }
 
-.sales-inline-actions {
-  margin-top: 1.6rem;
+.wm-hero h1 span {
+  display: block;
+  color: transparent;
+  background: linear-gradient(135deg, #f8fafc, #7dd3fc 38%, #c4b5fd 72%, #f0abfc);
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 
-.sales-feature-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
+.wm-hero-copy {
+  max-width: 760px;
+  margin: 1.45rem 0 0;
+  color: var(--muted-strong);
+  font-size: clamp(1.12rem, 1.8vw, 1.42rem);
+  line-height: 1.62;
+}
+
+.wm-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
   margin-top: 2rem;
 }
 
-.sales-feature-card {
-  min-height: 155px;
-  padding: 1.25rem;
-  border: 1px solid rgba(255, 255, 255, 0.13);
-  border-radius: 24px;
-  background:
-    linear-gradient(135deg, rgba(255,255,255,0.086), rgba(255,255,255,0.035));
-  box-shadow: var(--shadow-soft);
-  transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+.wm-hero-proof {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin-top: 2rem;
+  max-width: 760px;
 }
 
-.sales-feature-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(56, 189, 248, 0.48);
-  background: rgba(255, 255, 255, 0.095);
+.wm-proof-item {
+  min-height: 6.3rem;
+  padding: 1rem;
+  border: 1px solid rgba(255,255,255,0.13);
+  border-radius: 1.15rem;
+  background: rgba(255,255,255,0.055);
+  backdrop-filter: blur(18px);
 }
 
-.sales-feature-card strong {
+.wm-proof-item strong {
   display: block;
   color: var(--text);
   font-family: "Space Grotesk", sans-serif;
-  font-size: 1.08rem;
-  margin-bottom: 0.55rem;
+  font-size: 1.02rem;
+  line-height: 1.1;
 }
 
-.sales-feature-card span {
+.wm-proof-item span {
   display: block;
+  margin-top: 0.45rem;
   color: var(--muted);
-  line-height: 1.55;
-  font-size: 0.95rem;
+  font-size: 0.88rem;
+  line-height: 1.35;
 }
 
-.sales-contact-inner {
-  gap: 1.5rem;
+.wm-product-card {
+  position: relative;
+  min-height: 34rem;
+  padding: 1.25rem;
+  border: 1px solid rgba(125,211,252,0.26);
+  border-radius: 2rem;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.12), rgba(255,255,255,0.045)),
+    radial-gradient(circle at 12% 10%, rgba(56,189,248,0.16), transparent 34%),
+    radial-gradient(circle at 85% 78%, rgba(139,92,246,0.18), transparent 42%);
+  box-shadow: var(--shadow), 0 0 54px rgba(56,189,248,0.13);
+  overflow: hidden;
+  backdrop-filter: blur(22px);
 }
 
-.sales-contact-inner p:not(.eyebrow) {
-  margin-top: 0.85rem;
-  max-width: 720px;
+.wm-product-card::before {
+  content: "";
+  position: absolute;
+  inset: 1.05rem;
+  border-radius: 1.45rem;
+  border: 1px solid rgba(255,255,255,0.12);
+  pointer-events: none;
+}
+
+.wm-product-topline {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
   color: var(--muted-strong);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
-@media (max-width: 1100px) {
-  .sales-hero-content,
-  .sales-split {
+.wm-product-screen {
+  position: relative;
+  margin-top: 1.15rem;
+  min-height: 22rem;
+  border-radius: 1.35rem;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.12);
+  background:
+    linear-gradient(180deg, rgba(15,23,42,0.28), rgba(2,6,23,0.58)),
+    url('../assets/social/og-image.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.wm-root .wm-product-screen {
+  background-image:
+    linear-gradient(180deg, rgba(15,23,42,0.28), rgba(2,6,23,0.58)),
+    url('../assets/social/og-image.png');
+}
+
+.wm-dev .wm-product-screen {
+  background-image:
+    linear-gradient(180deg, rgba(15,23,42,0.28), rgba(2,6,23,0.58)),
+    url('../assets/social/og-image.png');
+}
+
+.wm-product-screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 34px 34px;
+  opacity: 0.22;
+}
+
+.wm-screen-chip {
+  position: absolute;
+  z-index: 2;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.65rem;
+}
+
+.wm-screen-chip span {
+  padding: 0.7rem 0.65rem;
+  border: 1px solid rgba(125,211,252,0.22);
+  border-radius: 0.8rem;
+  background: rgba(2,6,23,0.7);
+  color: var(--text);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.wm-product-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.wm-product-metrics div {
+  padding: 0.9rem;
+  border-radius: 1rem;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.wm-product-metrics strong {
+  display: block;
+  color: var(--cyan);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.35rem;
+}
+
+.wm-product-metrics span {
+  display: block;
+  margin-top: 0.24rem;
+  color: var(--muted);
+  font-size: 0.76rem;
+}
+
+.wm-section-split {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: start;
+}
+
+.wm-section-copy h2 {
+  font-family: "Space Grotesk", sans-serif;
+  color: var(--text);
+  font-size: clamp(2.2rem, 4.6vw, 4.8rem);
+  line-height: 0.96;
+  letter-spacing: -0.06em;
+  margin-bottom: 1rem;
+}
+
+.wm-section-copy p {
+  color: var(--muted-strong);
+  font-size: 1.08rem;
+  line-height: 1.65;
+}
+
+.wm-use-grid,
+.wm-feature-grid,
+.wm-media-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.wm-use-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.wm-feature-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.wm-media-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.wm-card {
+  min-height: 100%;
+  padding: 1.25rem;
+  border: 1px solid rgba(255,255,255,0.13);
+  border-radius: 1.35rem;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.095), rgba(255,255,255,0.038)),
+    radial-gradient(circle at 12% 8%, rgba(56,189,248,0.10), transparent 34%);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(18px);
+  transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+}
+
+.wm-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(56,189,248,0.46);
+  background: rgba(255,255,255,0.105);
+}
+
+.wm-card span {
+  display: inline-flex;
+  margin-bottom: 0.9rem;
+  color: var(--cyan);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.wm-card h3 {
+  margin: 0 0 0.7rem;
+  color: var(--text);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.22rem;
+  line-height: 1.14;
+}
+
+.wm-card p,
+.wm-card li {
+  color: var(--muted);
+  font-size: 0.96rem;
+  line-height: 1.55;
+}
+
+.wm-card ul {
+  margin: 0.75rem 0 0;
+  padding-left: 1.05rem;
+}
+
+.wm-band {
+  max-width: none;
+  width: 100%;
+  border-top: 1px solid var(--panel-border);
+  border-bottom: 1px solid var(--panel-border);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.02)),
+    radial-gradient(circle at 12% 8%, rgba(56,189,248,0.09), transparent 30%),
+    radial-gradient(circle at 84% 74%, rgba(236,72,153,0.08), transparent 32%);
+}
+
+.wm-band > .wm-band-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 6rem 1.5rem;
+}
+
+.wm-wide-cta {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(2rem, 5vw, 4rem);
+  border: 1px solid rgba(125,211,252,0.22);
+  border-radius: 2rem;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(56,189,248,0.18), transparent 34%),
+    radial-gradient(circle at 84% 78%, rgba(139,92,246,0.18), transparent 42%),
+    linear-gradient(135deg, rgba(255,255,255,0.10), rgba(255,255,255,0.04));
+  box-shadow: var(--shadow);
+}
+
+.wm-wide-cta h2 {
+  max-width: 880px;
+  margin-bottom: 1rem;
+  color: var(--text);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(2.2rem, 5vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+.wm-wide-cta p {
+  max-width: 780px;
+  color: var(--muted-strong);
+  font-size: 1.1rem;
+}
+
+.wm-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 1.7rem;
+}
+
+.wm-quote-strip {
+  display: grid;
+  grid-template-columns: 0.72fr 1.28fr;
+  gap: 1.2rem;
+  align-items: stretch;
+}
+
+.wm-quote-panel {
+  padding: 1.45rem;
+  border-radius: 1.35rem;
+  border: 1px solid rgba(255,255,255,0.13);
+  background: rgba(255,255,255,0.06);
+}
+
+.wm-quote-panel strong {
+  color: var(--text);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.35rem;
+  line-height: 1.1;
+}
+
+.wm-quote-panel p {
+  margin-top: 0.85rem;
+}
+
+@media (max-width: 1080px) {
+  .wm-hero-grid,
+  .wm-section-split,
+  .wm-quote-strip {
     grid-template-columns: 1fr;
   }
 
-  .sales-card-grid.four-up,
-  .sales-feature-grid {
+  .wm-product-card {
+    min-height: auto;
+  }
+
+  .wm-feature-grid,
+  .wm-media-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (max-width: 820px) {
-  .sales-card-grid.three-up,
-  .sales-card-grid.four-up,
-  .sales-feature-grid {
+@media (max-width: 720px) {
+  .wm-hero {
+    padding-top: 7.5rem;
+  }
+
+  .wm-hero-proof,
+  .wm-use-grid,
+  .wm-feature-grid,
+  .wm-media-grid,
+  .wm-product-metrics,
+  .wm-screen-chip {
     grid-template-columns: 1fr;
   }
 
-  .sales-panel,
-  .sales-screen-card {
-    border-radius: 24px;
+  .wm-screen-chip {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    margin: 1rem;
   }
 
-  .sales-proof-row span {
-    width: 100%;
-    justify-content: center;
+  .wm-product-screen {
+    min-height: 18rem;
+  }
+}
+
+
+/* WInterface marketing revision: replaces the top Product Layer card with a subtle animated signal field. */
+.wm-signal-card {
+  position: relative;
+  min-height: 34rem;
+  border: 1px solid rgba(125, 211, 252, 0.25);
+  border-radius: 2rem;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 48%, rgba(56, 189, 248, 0.22), transparent 0 9rem, transparent 18rem),
+    radial-gradient(circle at 20% 18%, rgba(139, 92, 246, 0.22), transparent 34%),
+    radial-gradient(circle at 86% 78%, rgba(14, 165, 233, 0.18), transparent 40%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.035));
+  box-shadow: var(--shadow), 0 0 58px rgba(56, 189, 248, 0.14);
+  backdrop-filter: blur(22px);
+  isolation: isolate;
+}
+
+.wm-signal-card::before,
+.wm-signal-card::after {
+  content: "";
+  position: absolute;
+  inset: 1rem;
+  border-radius: 1.45rem;
+  pointer-events: none;
+}
+
+.wm-signal-card::before {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.wm-signal-card::after {
+  background:
+    linear-gradient(90deg, transparent, rgba(125, 211, 252, 0.16), transparent),
+    linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.04), transparent);
+  transform: translateX(-110%);
+  animation: wmSignalSweep 9s ease-in-out infinite;
+  opacity: 0.55;
+}
+
+.wm-signal-grid {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(125, 211, 252, 0.07) 1px, transparent 1px),
+    linear-gradient(rgba(125, 211, 252, 0.055) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: radial-gradient(circle at center, black 0 58%, transparent 83%);
+  opacity: 0.5;
+  animation: wmGridDrift 18s linear infinite;
+}
+
+.wm-signal-route {
+  position: absolute;
+  inset: 12%;
+  border: 1px solid rgba(125, 211, 252, 0.19);
+  border-radius: 42% 58% 54% 46%;
+  opacity: 0.72;
+  animation: wmRouteSpin 21s linear infinite;
+}
+
+.wm-signal-route-two {
+  inset: 19%;
+  border-color: rgba(216, 180, 254, 0.18);
+  border-radius: 56% 44% 46% 54%;
+  animation-duration: 28s;
+  animation-direction: reverse;
+}
+
+.wm-signal-core {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: clamp(9rem, 20vw, 13rem);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba(125, 211, 252, 0.16), transparent 67%),
+    rgba(2, 6, 23, 0.42);
+  border: 1px solid rgba(125, 211, 252, 0.22);
+  box-shadow: 0 0 50px rgba(56, 189, 248, 0.18), inset 0 0 32px rgba(125, 211, 252, 0.08);
+}
+
+.wm-signal-core img {
+  width: 58%;
+  height: 58%;
+  object-fit: contain;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 20px rgba(125, 211, 252, 0.35));
+  animation: wmLogoFloat 6s ease-in-out infinite;
+}
+
+.wm-signal-ring {
+  position: absolute;
+  inset: -14%;
+  border: 1px solid rgba(125, 211, 252, 0.22);
+  border-radius: 50%;
+  animation: wmSignalPulse 4.8s ease-in-out infinite;
+}
+
+.wm-signal-ring-two {
+  inset: -34%;
+  border-color: rgba(216, 180, 254, 0.15);
+  animation-delay: 1.3s;
+}
+
+.wm-map-node {
+  position: absolute;
+  width: 0.9rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: rgba(125, 211, 252, 0.92);
+  box-shadow: 0 0 18px rgba(125, 211, 252, 0.8);
+}
+
+.wm-map-node span {
+  position: absolute;
+  inset: -0.55rem;
+  border: 1px solid rgba(125, 211, 252, 0.28);
+  border-radius: 50%;
+  animation: wmNodePulse 3.4s ease-in-out infinite;
+}
+
+.wm-map-node-one { left: 20%; top: 25%; }
+.wm-map-node-two { right: 19%; top: 31%; animation-delay: 0.7s; }
+.wm-map-node-three { left: 24%; bottom: 22%; animation-delay: 1.2s; }
+.wm-map-node-four { right: 23%; bottom: 20%; animation-delay: 1.9s; }
+
+.wm-signal-readout {
+  position: absolute;
+  left: 1.25rem;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  padding: 1rem 1.05rem;
+  border-radius: 1.1rem;
+  border: 1px solid rgba(125, 211, 252, 0.18);
+  background: rgba(2, 6, 23, 0.62);
+  box-shadow: inset 0 0 24px rgba(125, 211, 252, 0.06);
+  backdrop-filter: blur(18px);
+}
+
+.wm-signal-readout strong,
+.wm-signal-readout span {
+  display: block;
+}
+
+.wm-signal-readout strong {
+  color: var(--text);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.wm-signal-readout span {
+  margin-top: 0.28rem;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+@keyframes wmSignalSweep {
+  0%, 18% { transform: translateX(-115%); opacity: 0; }
+  30%, 58% { opacity: 0.55; }
+  74%, 100% { transform: translateX(115%); opacity: 0; }
+}
+
+@keyframes wmGridDrift {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 84px 42px, 84px 42px; }
+}
+
+@keyframes wmRouteSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes wmLogoFloat {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-0.35rem) scale(1.025); }
+}
+
+@keyframes wmSignalPulse {
+  0%, 100% { transform: scale(0.96); opacity: 0.32; }
+  50% { transform: scale(1.04); opacity: 0.76; }
+}
+
+@keyframes wmNodePulse {
+  0%, 100% { transform: scale(0.75); opacity: 0.35; }
+  50% { transform: scale(1.45); opacity: 0.82; }
+}
+
+@media (max-width: 1080px) {
+  .wm-signal-card {
+    min-height: 28rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .wm-signal-card {
+    min-height: 23rem;
+  }
+
+  .wm-signal-readout {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wm-signal-card::after,
+  .wm-signal-grid,
+  .wm-signal-route,
+  .wm-signal-core img,
+  .wm-signal-ring,
+  .wm-map-node span {
+    animation: none !important;
   }
 }

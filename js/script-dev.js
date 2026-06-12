@@ -789,9 +789,15 @@
 
   if (interfaceSystem) {
     const interfaceSystemToggle = interfaceSystem.querySelector('[data-interface-system-toggle]');
+    const interfaceThemeToggle = interfaceSystem.querySelector('[data-interface-theme-toggle]');
     const interfaceSystemStatusText = interfaceSystem.querySelector('[data-interface-system-status-text]');
     const interfaceMaximizeToggle = interfaceSystem.querySelector('[data-interface-maximize-toggle]');
     const winterfaceMaximizeQuery = window.matchMedia('(min-width: 900px)');
+    if (interfaceThemeToggle) {
+      interfaceThemeToggle.setAttribute('aria-label', 'Change Visual Styles');
+      interfaceThemeToggle.setAttribute('title', 'Change Visual Styles');
+    }
+
     let winterfaceOnline = true;
     let winterfaceMaximized = false;
     let storedBodyOverflow = '';
@@ -807,11 +813,11 @@
       interfaceMaximizeToggle.setAttribute(
         'aria-label',
         canMaximize
-          ? (winterfaceMaximized ? 'Restore WInterface Console' : 'Maximize WInterface Console')
+          ? (winterfaceMaximized ? 'Undock WInterface' : 'Dock To Fullscreen')
           : 'WInterface maximize mode is available on larger screens'
       );
       interfaceMaximizeToggle.title = canMaximize
-        ? (winterfaceMaximized ? 'Restore WInterface Console' : 'Maximize WInterface Console')
+        ? (winterfaceMaximized ? 'Undock WInterface' : 'Dock To Fullscreen')
         : 'Maximize mode is available on larger screens';
     }
 
@@ -880,6 +886,7 @@
       if (interfaceSystemToggle) {
         interfaceSystemToggle.setAttribute('aria-pressed', String(winterfaceOnline));
         interfaceSystemToggle.setAttribute('aria-label', winterfaceOnline ? 'Turn Winterface system offline' : 'Turn Winterface system online');
+        interfaceSystemToggle.setAttribute('title', winterfaceOnline ? 'Mute Style & Sound' : 'Unmute Style & Sound');
       }
 
       if (interfaceSystemStatusText) {
@@ -1814,8 +1821,11 @@
 
       playbackStatus.classList.toggle('is-autoplay-linked', isToggle);
       playbackStatus.classList.toggle('is-slideshow-linked', Boolean(isImage));
+      const playbackHoverLabel = isImage
+        ? (interfaceImageSlideshow ? 'Click To Turn Off Slideshow' : 'Click To Turn On Slideshow')
+        : fullLabel;
       playbackStatus.setAttribute('aria-label', isToggle ? `${fullLabel}. Click to toggle ${isVideo ? 'auto-play' : 'slideshow mode'}.` : fullLabel);
-      playbackStatus.setAttribute('title', fullLabel);
+      playbackStatus.setAttribute('title', playbackHoverLabel);
 
       if (isToggle) {
         playbackStatus.setAttribute('role', 'button');
@@ -2937,7 +2947,10 @@
 
 
     if (mediaToggle) {
+        const mediaToggleLabel = expanded ? 'Unsnap To Full View' : 'Snap To Widescreen';
         mediaToggle.setAttribute('aria-pressed', String(Boolean(expanded)));
+        mediaToggle.setAttribute('aria-label', mediaToggleLabel);
+        mediaToggle.setAttribute('title', mediaToggleLabel);
         mediaToggle.textContent = expanded ? 'Collapse WInterface ☠️' : 'Expand WInterface 🦇';
       }
     }
@@ -3288,7 +3301,7 @@
     function applyWinterfaceTheme(themeKey, options = {}) {
       if (!themeStylesheet || !themeFiles.hasOwnProperty(themeKey)) return;
       const baseHref = getThemeBaseHref();
-      const themeCacheVersion = '3.7-bay-orb-sync-20260609';
+      const themeCacheVersion = '3.7-clean-media-capsules-20260612';
       const nextHrefBase = themeKey === 'default' ? `${baseHref}${baseHref.startsWith('../') ? 'style-dev.css' : 'style.css'}` : `${baseHref}themes/${themeFiles[themeKey]}`;
       const nextHref = `${nextHrefBase}?v=${themeCacheVersion}`;
       if (themeStylesheet.getAttribute('href') !== nextHref) {
